@@ -7,7 +7,7 @@ import os
 import asyncio
 
 client = commands.Bot(command_prefix="-", intents=discord.Intents.all())
-status=cycle(["Under Development"])
+status=cycle(["Bored"])
 
 @tasks.loop(seconds=10)
 async def change_status():
