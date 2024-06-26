@@ -30,6 +30,8 @@ async def help(ctx):
     hel.add_field(name="Kick",value="Kicks the mentioned user from the server", inline=False)
     hel.add_field(name="Ban",value="Bans the mentioned user from the server", inline=False)
     hel.add_field(name="Unban",value="Unbans the mentioned user from the server", inline=False)
+    hel.add_field(name="Calculate/Cal/Calc",value="Solve +/-/* and divide sums", inline=False)
+
     hel.add_field(name="Need Help?",value="[Join the support server!](https://discord.gg/wpXzG9d2)", inline=False)
     await ctx.send(embed=hel)
 

@@ -15,8 +15,12 @@ class Cal(commands.Cog):
             numone=int(expression[0:p])
             numtwo=int(expression[p+1:l])
             ope=numone+numtwo
-                       
-            await ctx.send(ope)
+            solve=discord.Embed(title="Calculator", color=discord.Color.random())
+            solve.add_field(name="First Number", value=f"{numone}",inline=False)
+            solve.add_field(name="Second Number",value=f"{numtwo}",inline=False)
+            solve.add_field(name="Answer", value=f"{ope}",inline=False)
+            await ctx.send(solve)
+
 
         elif "-" in expression:
             p=int(expression.find("-"))
