@@ -27,32 +27,44 @@ class Cal(commands.Cog):
             numone=int(expression[0:p])
             numtwo=int(expression[p+1:l])
             ope=numone-numtwo
+            solve=discord.Embed(title="Calculator", color=discord.Color.random())
+            solve.add_field(name="Input", value=f"`{numone}-{numtwo}`",inline=False)
+            solve.add_field(name="Output", value=f"`{ope}`",inline=False)
+            await ctx.send(embed=solve)
                        
-            await ctx.send(ope)
         elif "*" in expression:
             p=int(expression.find("*"))
             l=len(expression)
             numone=int(expression[0:p])
             numtwo=int(expression[p+1:l])
             ope=numone*numtwo
+            solve=discord.Embed(title="Calculator", color=discord.Color.random())
+            solve.add_field(name="Input", value=f"`{numone}*{numtwo}`",inline=False)
+            solve.add_field(name="Output", value=f"`{ope}`",inline=False)
+            await ctx.send(embed=solve)
                        
-            await ctx.send(ope)
         elif "/" in expression:
             p=int(expression.find("/"))
             l=len(expression)
             numone=int(expression[0:p])
             numtwo=int(expression[p+1:l])
             ope=numone/numtwo
+            solve=discord.Embed(title="Calculator", color=discord.Color.random())
+            solve.add_field(name="Input", value=f"`{numone}/{numtwo}`",inline=False)
+            solve.add_field(name="Output", value=f"`{ope}`",inline=False)
+            await ctx.send(embed=solve)
                        
-            await ctx.send(ope)
         elif "t" in expression:
             p=int(expression.find("t"))
             l=len(expression)
             numone=int(expression[0:p])
             numtwo=int(expression[p+1:l])
             ope=numone**numtwo
+            solve=discord.Embed(title="Calculator", color=discord.Color.random())
+            solve.add_field(name="Input", value=f"`{numone}**{numtwo}`",inline=False)
+            solve.add_field(name="Output", value=f"`{ope}`",inline=False)
+            await ctx.send(embed=solve)
                        
-            await ctx.send(ope)
 
         
 async def setup(client):
