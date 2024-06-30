@@ -9,14 +9,20 @@ class Kick(commands.Cog):
         self.client=client
     @commands.command(aliases=["hata","gu"])
     @has_permissions(kick_members=True)
-    async def kick(self,ctx, member:discord.Member, *,modreason=None):
+    async def kick(self,ctx, member:discord.Member=None, *,modreason=None):
         if modreason==None:
             modreason="no reason"
-        await ctx.guild.kick(member)
-        embedkick=discord.Embed(title="Success!", color=discord.Color.random())
-        embedkick.add_field(name="Kicked:", value=f"{member} has been kicked by {ctx.author.mention}", inline=False)
-        embedkick.add_field(name="Reason:", value=f"{modreason}", inline=False)
-        await ctx.send(embed=embedkick)
+        if member==None:
+            await ctx.send("Specify the member to be kicked!")
+        else:
+            await ctx.guild.kick(member)
+            embedkick=discord.Embed(title="Success!", color=discord.Color.random())
+            embedkick.add_field(name="Kicked:", value=f"{member} has been kicked by {ctx.author.mention}", inline=False)
+            embedkick.add_field(name="Reason:", value=f"{modreason}", inline=False)
+            await ctx.send(embed=embedkick)
+
+            
+        
     
 async def setup(client):
     await client.add_cog(Kick(client))
