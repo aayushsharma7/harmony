@@ -35,11 +35,6 @@ async def help(ctx):
     hel.add_field(name="Need Help?",value="[Join the support server!](https://discord.gg/wpXzG9d2)", inline=False)
     await ctx.send(embed=hel)
 
-@client.event
-async def on_message(message):
-    if client.user.mentioned_in(message):
-        await message.channel.send("kya hai gadhe, bt na de, hehe")
-    await client.process_commands(message)
 
 @client.event
 async def on_message(message):
